@@ -1,0 +1,5 @@
+[env]
+
+RUST_LOG = "rust_production_example=debug"
+
+SERVICE_WEB_FOLDER = "web-folder/"

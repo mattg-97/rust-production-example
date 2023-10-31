@@ -1,0 +1,53 @@
+[package]
+name = "rust-production-example"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+authors = ["Jeremy Chone <jeremy.chone@gmail.com>"]
+license = "./LICENSE"
+description = "rust-production-example production blueprint."
+repository = "https://github.com/mattg-97/rust-production-example"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+# -- Json
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = "3"
+# -- Web
+axum = "0.6"
+tower-http = { version = "0.4", features = ["fs"] }
+tower-cookies = "0.9"
+# -- Data
+sqlx = { version = "0.7", features = [
+    "runtime-tokio",
+    "runtime-tokio-rustls",
+    "postgres",
+    "uuid",
+    "time",
+] }
+sqlb = "0.4"
+# -- Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# -- Hashing & Encoding
+rand = "0.8"
+hmac = "0.12"
+sha2 = "0.10"
+base64 = "0.21"
+base64-url = "2"
+# -- Others
+uuid = { version = "1", features = ["v4", "fast-rng"] }
+time = "0.3"
+async-trait = "0.1"
+strum_macros = "0.25"
+lazy-regex = "3.0.2"
+thiserror = "1.0.50"
+
+
+[dev-dependencies]
+anyhow = "1"
+httpc-test = "0.1.1"
+serial_test = "2"
